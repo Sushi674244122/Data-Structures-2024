@@ -12,7 +12,7 @@ cel = fahrenheit_to_celsius(fah)
 print('Fahrenheit = ', fah)
 print('Celsius = ', cel)
 
-cel = 37
+cel = float(37)
 fah = celsius_to_fahrenheit(cel)
 
 print('Celsius = ', cel)
