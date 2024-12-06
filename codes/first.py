@@ -6,7 +6,7 @@ def celsius_to_fahrenheit(celsius):
   fahrenheit = (celsius * 1.8) + 32
   return fahrenheit
 
-fah = 98.6
+fah = float(98.6)
 cel = fahrenheit_to_celsius(fah)
 
 print('Fahrenheit = ', fah)
