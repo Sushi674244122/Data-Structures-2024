@@ -11,6 +11,9 @@ student_data = [
 ]
 
 midterm = [[10],[9],[5],[10],[10],[10],[7]]
+final_score = [[60],[55],[49],[70],[66],[59],[70]]
+
+#คิดเกรด A = 80, B+=75, B=70, C+=65, C=60, D+=55, D=50, E <=49
 for student in student_data:
     print(f"รหัส: {student[0]}, ชื่อนามสกุล: {student[1]}")
 
