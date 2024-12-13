@@ -1,0 +1,45 @@
+# prompt: บันทึก รหัส ชื่อนามสกุลของนักศึกษา จำนวน32คนโดยใช้ Array
+import numpy as np
+
+student_data = [
+    ['644244112','นายชวกร  เมืองถาวร'],
+    ['644244115','นายญาณวุฒิ  บริบูรณ์'],
+    ['674244101','นางสาวกนกวรรณ  พรหมเทพ'],
+    ['674244102','นางสาวเกศินี  รุ่งเจริญดี'],
+    ['674244103','นางสาวจิดาภา  ยิ้มย่อง'],
+    ['674244104','นางสาวณาตาฌา  เรืองชัย'],
+    ['674244105','นางสาวณิชนัทนท์  แสงทอง']
+]
+
+midterm = [[10],[9],[5],[10],[10],[10],[7]]
+final_score = [[60],[55],[49],[70],[66],[59],[70]]
+
+#คิดเกรด A =80, B+=75, B=70, C+=65,C=60,D+=55,D=50,E=<40
+for student in student_data:
+    print(f"รหัส: {student[0]}, ชื่อนามสกุล: {student[1]}")
+
+student_np = np.array(student_data)
+
+student_np = np.append(student_np, midterm, axis = 1)
+student_np = np.append(student_np, final_score, axis = 1)
+row, col = student_np.shape
+grade = [['E'],['E'],['E'],['E'],['E'],['E'],['E']]
+student_np = np.append(student_np, grade, axis = 1)
+
+for i in range(row):
+  if (int(student_np[i,2]))+(int(student_np[i,3])) >= 80:
+    student_np[i][4] = 'A'
+  elif (int(student_np[i,2]))+(int(student_np[i,3])) >= 75:
+    student_np[i][4] = 'B+'
+  elif (int(student_np[i,2]))+(int(student_np[i,3])) >= 70:
+    student_np[i][4] = 'B'
+  elif (int(student_np[i,2]))+(int(student_np[i,3])) >= 65:
+    student_np[i][4] = 'C+'
+  elif (int(student_np[i,2]))+(int(student_np[i,3])) >= 60:
+    student_np[i][4] = 'C'
+  elif (int(student_np[i,2]))+(int(student_np[i,3])) >= 55:
+    student_np[i][4] = 'D+'
+  elif (int(student_np[i,2]))+(int(student_np[i,3])) >= 50:
+    student_np[i][4] = 'D'
+
+print(student_np)
